@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateAgeDisplay(this.value);
   });
 
+
+<script src="script.js"></script>
+
+
   // Manejar el click del botón de crear historia
   const createStoryButton = document.querySelector('button');
   createStoryButton.addEventListener('click', createStory);
