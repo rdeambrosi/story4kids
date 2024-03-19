@@ -62,20 +62,23 @@ footer {
     width: 100%;
 }
 
-.extra-values label, .characters label {
-  flex: 1 1 auto; /* Cambiado de 200px a auto para permitir más flexibilidad */
-  min-width: 150px; /* Establece un mínimo de ancho para cada elemento */
-  display: flex;
-  align-items: center;
-}
-
+/* Checkbox list styles updated for responsiveness and centering */
 .extra-values, .characters {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px; /* Ajusta el espacio entre las etiquetas según prefieras */
+  justify-content: center; /* Centra los elementos hijos horizontalmente */
+  padding: 10px;
+  margin-top: 0; /* Elimina el espacio arriba de las listas de checkbox */
 }
 
+.extra-values label, .characters label {
+  flex: 1 1 auto; /* Permite que cada etiqueta crezca y se encoja más libremente */
+  min-width: 150px; /* Establece un ancho mínimo para cada etiqueta */
+  display: flex;
+  align-items: center; /* Centra el checkbox verticalmente dentro de la etiqueta */
+}
 
 input[type="checkbox"] {
-  margin-right: 10px; /* Espacio entre el checkbox y su etiqueta. */
+  margin-right: 10px; /* Espacio entre el checkbox y su etiqueta */
 }
