@@ -35,12 +35,6 @@ main {
     padding-top: 0;
 }
 
-/* Checkbox list styles */
-.extra-values, .characters {
-    padding: 10px;
-    margin-top: 0; /* Removes space above the checkbox lists */
-}
-
 /* Button styles */
 button {
     background-color: #ff6f61; /* soft red */
@@ -68,17 +62,19 @@ footer {
     width: 100%;
 }
 
+.extra-values label, .characters label {
+  flex: 1 1 auto; /* Cambiado de 200px a auto para permitir más flexibilidad */
+  min-width: 150px; /* Establece un mínimo de ancho para cada elemento */
+  display: flex;
+  align-items: center;
+}
+
 .extra-values, .characters {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Ajusta el espacio entre las etiquetas según prefieras */
+  gap: 10px;
 }
 
-.extra-values label, .characters label {
-  flex: 1 1 200px; /* Cada etiqueta intentará ocupar al menos 200px, pero puede crecer si hay espacio disponible. */
-  display: flex;
-  align-items: center; /* Centra los checkbox verticalmente dentro de la etiqueta. */
-}
 
 input[type="checkbox"] {
   margin-right: 10px; /* Espacio entre el checkbox y su etiqueta. */
