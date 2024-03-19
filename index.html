@@ -5,10 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Story Themed Creation App</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  /* Add your CSS styles here */
-  /* ... */
-</style>
 </head>
 <body>
   <header>
@@ -16,38 +12,39 @@
   </header>
 
   <main>
-    <!-- yourStory -->
+    <!-- Your Story -->
     <section id="your-story">
       <h2>Your story</h2>
       <div class="story-container">
         <div class="story-item">
           <h3>Your kid's age</h3>
-            <div class="age-display">
-            Your kid is <span id="age-output">5</span> years old
-            </div>
           <!-- Age Slider -->
           <div class="age-slider">
-            <input type="range" min="2" max="13" value="5" id="kid-age" oninput="document.getElementById('age-output').value = this.value">
-            <output id="age-output">5</output>
+            <input type="range" min="2" max="13" value="5" id="kid-age">
+          </div>
+          <div class="age-display" id="age-display">
+            Your kid is 5 years old
           </div>
           <h3>Your values</h3>
           <!-- Additional Values -->
           <div class="extra-values">
-            <label><input type="checkbox"> Kindness </label>
-            <label><input type="checkbox"> Humility </label>
+            <label><input type="checkbox"> Kindness</label>
+            <label><input type="checkbox"> Humility</label>
+            <label><input type="checkbox"> Courage</label>
+            <label><input type="checkbox"> Honesty</label>
+            <label><input type="checkbox"> Creativity</label>
             <!-- More values -->
           </div>
           <h3>Your characters</h3>
           <!-- Characters -->
           <div class="characters">
-            <label><input type="checkbox"> Princess </label>
-            <label><input type="checkbox"> Dragon </label>
+            <label><input type="checkbox"> Princess</label>
+            <label><input type="checkbox"> Dragon</label>
+            <label><input type="checkbox"> Astronaut</label>
+            <label><input type="checkbox"> Pirate</label>
+            <label><input type="checkbox"> Unicorn</label>
             <!-- More characters -->
           </div>
-          <!-- Additional empty row -->
-          <div class="empty-row"></div>
-          <!-- Spacing -->
-          <div class="spacing"></div>
           <!-- Create Story Button -->
           <button> Create story </button>
         </div>
@@ -59,16 +56,7 @@
   <footer>
     <!-- Footer Information -->
   </footer>
-
-  <script>
-    // Add your JavaScript for interactivity here
-    /* ... */
-  </script>
 </body>
-</html>
-...
 
 <script src="script.js"></script>
-</body>
 </html>
-
