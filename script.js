@@ -1,39 +1,38 @@
-// Función para actualizar la edad en el display
-function updateAgeDisplay(value) {
-  document.getElementById('age-output').textContent = value;
-}
-
-// Función para recoger los valores y personajes seleccionados y crear la historia
-function createStory() {
-  const age = document.getElementById('kid-age').value;
-  const valuesCheckboxes = document.querySelectorAll('.extra-values input[type="checkbox"]:checked');
-  const charactersCheckboxes = document.querySelectorAll('.characters input[type="checkbox"]:checked');
-
-  // Recolectar valores seleccionados
-  const selectedValues = Array.from(valuesCheckboxes).map(cb => cb.nextSibling.textContent.trim());
-  // Recolectar personajes seleccionados
-  const selectedCharacters = Array.from(charactersCheckboxes).map(cb => cb.nextSibling.textContent.trim());
-
-  // Aquí puedes añadir la lógica para generar la historia usando los valores y personajes seleccionados
-  const story = `Una historia para un niño de ${age} años, que enseña valores de ${selectedValues.join(', ')} con personajes como ${selectedCharacters.join(', ')}.`;
-
-  // Por ahora, vamos a mostrar la historia en un alerta. En una aplicación real, probablemente querrás mostrar esto en la interfaz de usuario.
-  alert(story);
-}
-
-// Agregar event listeners
 document.addEventListener('DOMContentLoaded', function() {
-  // Actualizar la edad cuando se mueve el slider
   const ageSlider = document.getElementById('kid-age');
-  ageSlider.addEventListener('input', function() {
-    updateAgeDisplay(this.value);
-  });
+  const ageDisplay = document.getElementById('age-display');
+  
+  // Update the age display based on the slider's value
+  ageSlider.oninput = function() {
+    ageDisplay.textContent = `Your kid is ${this.value} years old`;
+  };
 
+  // Function to collect selected values and characters and create a story
+  function createStory() {
+    const age = ageSlider.value;
+    const values = document.querySelectorAll('.extra-values input[type="checkbox"]:checked');
+    const characters = document.querySelectorAll('.characters input[type="checkbox"]:checked');
 
-<script src="script.js"></script>
+    let selectedValues = [];
+    values.forEach((value) => {
+      selectedValues.push(value.nextElementSibling.textContent.trim());
+    });
 
+    let selectedCharacters = [];
+    characters.forEach((character) => {
+      selectedCharacters.push(character.nextElementSibling.textContent.trim());
+    });
 
-  // Manejar el click del botón de crear historia
+    // Example of creating a simple story. You can expand this based on your requirements.
+    const story = `Once upon a time, in a land far away, a ${selectedCharacters.join(", ")} learned about ${selectedValues.join(", ")}. And they all lived happily ever after.`;
+    
+    // For demonstration purposes, we'll just log the story to the console.
+    // In a real application, you might want to display this on the webpage.
+    console.log(story);
+    alert(story); // Alternatively, show the story in an alert.
+  }
+
+  // Add event listener to the "Create story" button
   const createStoryButton = document.querySelector('button');
   createStoryButton.addEventListener('click', createStory);
 });
