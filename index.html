@@ -1,62 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Story Themed Creation App</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story4Kids - Create Stories for Children</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <!-- Navigation Bar -->
-  </header>
+    <div id="snackbar">Welcome to Story4Kids!</div>
 
-  <main>
-    <!-- Your Story -->
-    <section id="your-story">
-      <h2>Your story</h2>
-      <div class="story-container">
-        <div class="story-item">
-          <h3>Your kid's age</h3>
-          <!-- Age Slider -->
-          <div class="age-slider">
-            <input type="range" min="2" max="13" value="5" id="kid-age">
-          </div>
-          <div class="age-display" id="age-display">
-            Your kid is 5 years old
-          </div>
-          <h3>Your values</h3>
-          <!-- Additional Values -->
-          <div class="extra-values">
-            <label><input type="checkbox"> Kindness</label>
-            <label><input type="checkbox"> Humility</label>
-            <label><input type="checkbox"> Courage</label>
-            <label><input type="checkbox"> Honesty</label>
-            <label><input type="checkbox"> Creativity</label>
-            <!-- More values -->
-          </div>
-          <h3>Your characters</h3>
-          <!-- Characters -->
-          <div class="characters">
-            <label><input type="checkbox"> Princess</label>
-            <label><input type="checkbox"> Dragon</label>
-            <label><input type="checkbox"> Astronaut</label>
-            <label><input type="checkbox"> Pirate</label>
-            <label><input type="checkbox"> Unicorn</label>
-            <!-- More characters -->
-          </div>
-          <!-- Create Story Button -->
-          <button> Create story </button>
-        </div>
-      </div>
-    </section>
-    <!-- More sections like ABC, XYZ, etc. -->
-  </main>
+    <header>
+        <h1>Story4Kids</h1>
+    </header>
 
-  <footer>
-    <!-- Footer Information -->
-  </footer>
+    <main>
+        <img src="placeholder-logo.png" alt="Story4Kids Logo" class="main-image">
+        
+        <button id="create-story-btn" class="button">Create New Story</button>
+        <button id="archive-btn" class="button">Story Archive</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Story4Kids. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
-<script src="script.js"></script>
 </html>
