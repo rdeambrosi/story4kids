@@ -1,38 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const ageSlider = document.getElementById('kid-age');
-  const ageDisplay = document.getElementById('age-display');
-  
-  // Update the age display based on the slider's value
-  ageSlider.oninput = function() {
-    ageDisplay.textContent = `Your kid is ${this.value} years old`;
-  };
+    const createStoryBtn = document.getElementById('create-story-btn');
+    const archiveBtn = document.getElementById('archive-btn');
+    const snackbar = document.getElementById('snackbar');
 
-  // Function to collect selected values and characters and create a story
-  function createStory() {
-    const age = ageSlider.value;
-    const values = document.querySelectorAll('.extra-values input[type="checkbox"]:checked');
-    const characters = document.querySelectorAll('.characters input[type="checkbox"]:checked');
+    function showSnackbar() {
+        snackbar.className = "show";
+        setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+    }
 
-    let selectedValues = [];
-    values.forEach((value) => {
-      selectedValues.push(value.nextElementSibling.textContent.trim());
+    createStoryBtn.addEventListener('click', function() {
+        let email = prompt("Please enter your email:");
+        if (email) {
+            // Here you would typically check if the email is registered
+            // For now, we'll just simulate this behavior
+            if (email.includes('@')) {
+                alert("Redirecting to story creation page...");
+                // Here you would redirect to the story creation page
+            } else {
+                alert("Invalid email format. Please try again.");
+            }
+        } else {
+            alert("Email is required to continue.");
+        }
     });
 
-    let selectedCharacters = [];
-    characters.forEach((character) => {
-      selectedCharacters.push(character.nextElementSibling.textContent.trim());
+    archiveBtn.addEventListener('click', function() {
+        alert("Redirecting to login page for archive access...");
+        // Here you would redirect to the login page
     });
 
-    // Example of creating a simple story. You can expand this based on your requirements.
-    const story = `Once upon a time, in a land far away, a ${selectedCharacters.join(", ")} learned about ${selectedValues.join(", ")}. And they all lived happily ever after.`;
-    
-    // For demonstration purposes, we'll just log the story to the console.
-    // In a real application, you might want to display this on the webpage.
-    console.log(story);
-    alert(story); // Alternatively, show the story in an alert.
-  }
-
-  // Add event listener to the "Create story" button
-  const createStoryButton = document.querySelector('button');
-  createStoryButton.addEventListener('click', createStory);
+    // Show welcome message when page loads
+    showSnackbar();
 });
